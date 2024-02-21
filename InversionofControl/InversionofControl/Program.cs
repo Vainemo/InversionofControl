@@ -7,7 +7,8 @@ namespace InversionofControl
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            DependencyInjectionDemo dependencyInjectionDemo = new DependencyInjectionDemo();
+            dependencyInjectionDemo.Test();
         }
     }
 }

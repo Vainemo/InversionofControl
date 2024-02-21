@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace InversionofControl
 {
     /// <summary>
-    /// 服务注册定义
+    /// 服务注册定义(基本信息)
     /// </summary>
     public class ServiceDefinition
     {

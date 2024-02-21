@@ -11,9 +11,17 @@ namespace InversionofControl
         {
             return (Tservice)serviceProvider.GetService(typeof(Tservice));
         }
+        /// <summary>
+        /// 从容器中拿取目标对象
+        /// </summary>
+        /// <typeparam name="Tservice">目标对象</typeparam>
+        /// <param name="serviceProvider"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         public static Tservice ResolveRequiredService<Tservice>([NotNull] this IServiceProvider serviceProvider)
         {
             var serviceType=typeof(Tservice);
+            //从 IServiceProvider 容器中获取指定类型的服务。这是一个通用的依赖注入方法，用于获取注册在容器中的服务实例。
             var svc = serviceProvider.GetService(serviceType);
             if (null==svc)
             {

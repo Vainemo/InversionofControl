@@ -11,7 +11,13 @@ namespace InversionofControl
     /// </summary>
     public class ServiceKey : IEquatable<ServiceKey>
     {
+        /// <summary>
+        /// 服务的抽象类型
+        /// </summary>
         public Type ServiceType { get; }
+        /// <summary>
+        /// 实现类型
+        /// </summary>
         public Type ImplementType { get; }
 
         //IEquatable<T>接口解决了Object基类的Equals方法存在的两个问题
@@ -24,6 +30,7 @@ namespace InversionofControl
         public ServiceKey(Type serviceType,ServiceDefinition definition)
         {
             ServiceType= serviceType;
+            //获取服务的实现类型
             ImplementType = definition.GetImplementType();
         }
         public override bool Equals(object obj)
